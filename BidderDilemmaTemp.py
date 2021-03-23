@@ -1,3 +1,6 @@
+"""Jacob Kerr, 2021
+"""
+
 import random
 
 class Game:
