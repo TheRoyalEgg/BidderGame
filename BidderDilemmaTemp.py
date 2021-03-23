@@ -26,9 +26,8 @@ class Game:
                 if bid <= highbid or bid == 0:
                     print ('passing passing beep boop')
                     passes +=1
-                    if passes == self.plnum -1:
-                        if highplayer != -1:
-                            return (highbid,highplayer,self.lotslist.pop(0))
+                    if passes == self.plnum -1 and highplayer != -1:
+                        return (highbid,highplayer,self.lotslist.pop(0))
                 else:   
                     highbid = bid
                     highplayer = p
