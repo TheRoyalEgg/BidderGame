@@ -17,7 +17,7 @@ class Game:
            
     def gameround(self):
         self.plist.append(self.plist.pop(0))
-    passes = 0
+        passes = 0
         highbid = -1
         highplayer = -1
         while True:
