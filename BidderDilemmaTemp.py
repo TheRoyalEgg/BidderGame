@@ -8,12 +8,12 @@ class Game:
         self.lotslist = []
         self.plnum = plnum
         for i in range(plnum):
-            self.plist.append (Player(i,startmon))
+            self.plist.append(Player(i,startmon))
         total = 0
-        while total < plnum*winreq:
+        while total < plnum * winreq:
             temp = random.randint(1,3)
             total += temp
-            self.lotslist.append (temp)
+            self.lotslist.append(temp)
            
     def gameround(self):
         self.plist.append(self.plist.pop(0))
@@ -24,11 +24,11 @@ class Game:
             for p in self.plist:
                 bid = p.bid(self)
                 if bid <= highbid or bid == 0:
-                    print ('passing passing beep boop')
+                    print('passing passing beep boop')
                     passes +=1
                     if passes == self.plnum -1 and highplayer != -1:
-                        self.plist.append (self.plist.pop(0))
-                        return (highbid,highplayer,self.lotslist.pop(0))
+                        self.plist.append(self.plist.pop(0))
+                        return(highbid,highplayer,self.lotslist.pop(0))
                 else:   
                     highbid = bid
                     highplayer = p
@@ -50,8 +50,8 @@ class Player:
         self.tokens = 0
        
     def bid(self,game):
-        print (f'You have {self.money} moneys and {self.tokens} tokens.')
-        print (f'{game.lotslist} are the token lots, {game.lotslist[0]} is the next lot.')
+        print(f'You have {self.money} moneys and {self.tokens} tokens.')
+        print(f'{game.lotslist} are the token lots, {game.lotslist[0]} is the next lot.')
         return int(input(f'Player{self.p_id}, what is your bid? 0 to pass'))
 
     def wonround(self,tokens,money,req):
