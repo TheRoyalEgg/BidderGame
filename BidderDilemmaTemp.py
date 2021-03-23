@@ -64,3 +64,6 @@ class Player:
 def main():
     g = Game(int(input('Number of Players')),int(input('How Many Tokens to Win')),int(input('Starting Money')))
     g.playgame()
+    
+
+main()
